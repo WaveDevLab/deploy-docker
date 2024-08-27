@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db  # Remove quotes around the db hostname
+    depends_on:
+      - db  # Ensure phpmyadmin starts after the db service
