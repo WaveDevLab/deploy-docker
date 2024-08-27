@@ -1,11 +1,15 @@
-version: '3.1'
+version: "3.1"
 
 services:
   db:
-    image: mysql
+    build:
+      context: .  # Path to the directory containing the Dockerfile
+      dockerfile: Dockerfile.mysql  # Specify the Dockerfile name
     restart: always
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_USER: itnpru64
       MYSQL_PASSWORD: itnpru6438@
       MYSQL_DATABASE: activityDB
-      MYSQL_ROOT_PASSWORD: rootpassword 
+      MYSQL_ROOT_PASSWORD: rootpassword

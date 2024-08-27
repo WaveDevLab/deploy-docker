@@ -3,12 +3,12 @@ version: '3.1'
 services:
 
   phpmyadmin:
-    image: phpmyadmin
     restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.phpmyadmin
     ports:
       - 8080:80
     environment:
       PMA_ARBITRARY: 1
-      PMA_HOST: db  # Remove quotes around the db hostname
-    depends_on:
-      - db  # Ensure phpmyadmin starts after the db service
+      PMA_HOST: ""  # Remove quotes around the db hostname # Ensure phpmyadmin starts after the db service

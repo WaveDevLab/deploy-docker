@@ -1,0 +1,4 @@
+from phpmyadmin
+
+ENV PMA_HOST="http://localhost:3306"
+ENV PMA_ARBITRARY=1

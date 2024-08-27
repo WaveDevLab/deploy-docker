@@ -1,0 +1,15 @@
+# Use the official MySQL image as the base image
+FROM mysql:8.0
+
+# Set environment variables for MySQL configuration
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_USER=itnpru64
+ENV MYSQL_PASSWORD=itnpru6438@
+ENV MYSQL_DATABASE=activityDB
+
+# Optionally, copy custom configuration files or initialization scripts
+# COPY ./my_custom.cnf /etc/mysql/conf.d/
+# COPY ./init.sql /docker-entrypoint-initdb.d/
+
+# Expose port 3306
+EXPOSE 3306
